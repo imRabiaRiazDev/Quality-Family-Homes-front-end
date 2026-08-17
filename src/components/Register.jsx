@@ -128,11 +128,14 @@ export default function Register({ navigate }) {
                 <div className="sms-note">
                   <MessageSquareText size={18} />
                   <span>
-                    By providing your phone number, you expressly consent to receive SMS messages from Quality
-                    Family Homes regarding your inquiry, including responses, follow-ups, and tour-related
-                    communications. Message frequency varies. Message and data rates may apply. Reply{' '}
-                    <strong>STOP</strong> to opt out or <strong>HELP</strong> for help. Consent is not a
-                    condition of purchasing or using our services.
+                    By checking the box, you agree to receive SMS messages from Quality Family Homes. You can
+                    opt out at any time by replying <strong>STOP</strong>. For help, reply <strong>HELP</strong>.
+                    View our <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('privacy') }}>
+                      Privacy Policy
+                    </a>{' '}
+                    and <a href="/terms" onClick={(e) => { e.preventDefault(); navigate('terms') }}>
+                      Terms &amp; Conditions
+                    </a>.
                   </span>
                 </div>
 
@@ -146,10 +149,11 @@ export default function Register({ navigate }) {
                       onChange={handleChange}
                     />
                     <span>
-                      I agree to receive text messages from Quality Family Homes regarding my inquiry, including
-                      responses, follow-ups, and tour-related communications. Message frequency varies. Message
-                      and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong>{' '}
-                      for help. Consent is not a condition of purchasing or using our services.
+                      I agree to receive SMS messages from Quality Family Homes regarding my rental inquiry,
+                      including responses, follow-ups, room availability, tour scheduling, application
+                      information, and customer support. Message frequency varies. Message and data rates may
+                      apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help. SMS
+                      consent is optional and is not a condition of purchasing or using our services.
                     </span>
                   </label>
                 </div>

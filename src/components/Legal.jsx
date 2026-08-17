@@ -62,7 +62,10 @@ const PRIVACY = {
     },
     {
       heading: '3. Text messaging',
-      body: 'If you provide your phone number, you may receive text messages from Quality Family Homes about your inquiry, including responses, follow-ups, and tour-related communications. Message frequency varies, and message and data rates may apply. You can opt out at any time by replying STOP to any message you receive. For assistance, reply HELP.',
+      body: [
+        'If you voluntarily provide your phone number and separately opt in through the SMS consent checkbox on our registration form, Quality Family Homes may send you text messages about your rental inquiry, including responses, follow-ups, room availability, tour scheduling, application information, and customer support. Message frequency varies, and message and data rates may apply.',
+        'SMS consent is optional and is not required to submit a registration or use our services. You can opt out at any time by replying STOP to any message you receive. For assistance, reply HELP.',
+      ],
     },
     {
       heading: '4. Sharing of information',
@@ -124,7 +127,11 @@ export default function Legal({ view, navigate }) {
           {doc.sections.map((section) => (
             <div key={section.heading}>
               <h2>{section.heading}</h2>
-              <p>{section.body}</p>
+              {Array.isArray(section.body) ? (
+                section.body.map((para) => <p key={para.slice(0, 24)}>{para}</p>)
+              ) : (
+                <p>{section.body}</p>
+              )}
             </div>
           ))}
         </div>

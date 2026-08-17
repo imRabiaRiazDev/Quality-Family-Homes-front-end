@@ -1484,6 +1484,17 @@ p {
   margin-top: 2px;
 }
 
+.sms-note a {
+  color: var(--brass-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sms-note a:hover {
+  color: var(--espresso);
+}
+
 .consent-check {
   display: flex;
   gap: 0.6rem;
