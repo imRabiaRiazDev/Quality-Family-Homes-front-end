@@ -12,8 +12,8 @@ const CARDS = [
   {
     icon: Mail,
     title: 'Email us',
-    line: 'jmdarville102@gmail.com',
-    href: 'mailto:jmdarville102@gmail.com',
+    line: 'support@qualityfamily.house',
+    href: 'mailto:support@qualityfamily.house',
     sub: 'We’ll get back to you with the details you need.',
   },
   {

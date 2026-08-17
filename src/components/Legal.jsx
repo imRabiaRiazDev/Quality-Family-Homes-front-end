@@ -43,7 +43,7 @@ const TERMS = {
     },
     {
       heading: '10. Contact',
-      body: 'Questions about these Terms & Conditions can be sent to Quality Family Homes at jmdarville102@gmail.com or by calling (803) 670-0814.',
+      body: 'Questions about these Terms & Conditions can be sent to Quality Family Homes at support@qualityfamily.house or by calling (803) 670-0814.',
     },
   ],
 }
@@ -90,7 +90,7 @@ const PRIVACY = {
     },
     {
       heading: '10. Contact',
-      body: 'If you have questions about this Privacy Policy or how your information is handled, contact Quality Family Homes at jmdarville102@gmail.com or call (803) 670-0814.',
+      body: 'If you have questions about this Privacy Policy or how your information is handled, contact Quality Family Homes at support@qualityfamily.house or call (803) 670-0814.',
     },
   ],
 }

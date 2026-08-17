@@ -43,7 +43,7 @@ export default function Footer({ navigate }) {
                 <Phone size={16} /> <a href="tel:+18036700814">(803) 670-0814</a>
               </span>
               <span>
-                <Mail size={16} /> <a href="mailto:jmdarville102@gmail.com">jmdarville102@gmail.com</a>
+                <Mail size={16} /> <a href="mailto:support@qualityfamily.house">support@qualityfamily.house</a>
               </span>
               <span>
                 <MapPin size={16} /> Fort Mill, South Carolina

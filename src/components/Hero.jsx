@@ -34,8 +34,8 @@ export default function Hero({ navigate }) {
               <a href="tel:+18036700814">
                 <Phone size={16} /> (803) 670-0814
               </a>
-              <a href="mailto:jmdarville102@gmail.com">
-                <Mail size={16} /> jmdarville102@gmail.com
+              <a href="mailto:support@qualityfamily.house">
+                <Mail size={16} /> support@qualityfamily.house
               </a>
             </div>
           </Reveal>
