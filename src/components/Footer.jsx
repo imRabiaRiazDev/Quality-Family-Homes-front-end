@@ -66,13 +66,19 @@ export default function Footer({ navigate }) {
             <h3>Legal</h3>
             <ul className="footer__legal-links">
               <li>
-                <a href="#/terms">Terms &amp; Conditions</a>
+                <a href="/terms" onClick={(e) => { e.preventDefault(); navigate('terms') }}>
+                  Terms &amp; Conditions
+                </a>
               </li>
               <li>
-                <a href="#/privacy">Privacy Policy</a>
+                <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('privacy') }}>
+                  Privacy Policy
+                </a>
               </li>
               <li>
-                <a href="#/register">Register Now</a>
+                <a href="/register" onClick={(e) => { e.preventDefault(); navigate('register') }}>
+                  Register Now
+                </a>
               </li>
             </ul>
           </nav>

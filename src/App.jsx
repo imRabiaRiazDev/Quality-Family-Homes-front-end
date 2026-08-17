@@ -21,32 +21,32 @@ const TITLES = {
 
 const VIEWS = ['home', 'register', 'terms', 'privacy']
 
+function viewFromPath(path) {
+  const clean = path.replace(/^\/+|\/+$/g, '')
+  return VIEWS.includes(clean) ? clean : 'home'
+}
+
 export default function App() {
-  const [view, setView] = useState('home')
+  const [view, setView] = useState(() => viewFromPath(window.location.pathname))
   const [navOpen, setNavOpen] = useState(false)
 
   const navigate = useCallback((next) => {
     setView(next)
     setNavOpen(false)
     window.scrollTo({ top: 0, behavior: 'auto' })
-    const hash = next === 'home' ? window.location.pathname + window.location.search : `#/${next}`
-    if (window.location.hash !== `#/${next}`) {
-      window.history.replaceState(null, '', hash)
+    const url = next === 'home' ? '/' : `/${next}`
+    if (window.location.pathname !== url) {
+      window.history.pushState(null, '', url)
     }
   }, [])
 
   useEffect(() => {
-    const route = () => {
-      const raw = window.location.hash
-      if (!raw.startsWith('#/')) return
-      const name = raw.slice(2)
-      setView(VIEWS.includes(name) ? name : 'home')
+    const onPop = () => {
+      setView(viewFromPath(window.location.pathname))
       setNavOpen(false)
-      if (name !== 'home') window.scrollTo({ top: 0, behavior: 'auto' })
     }
-    window.addEventListener('hashchange', route)
-    route()
-    return () => window.removeEventListener('hashchange', route)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
   }, [])
 
   useEffect(() => {
