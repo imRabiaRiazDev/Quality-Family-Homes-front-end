@@ -77,7 +77,7 @@ const PRIVACY = {
     },
     {
       heading: '6. Your choices',
-      body: 'You may request access to, correction of, or deletion of your personal information at any time. You may also opt out of marketing communications by contacting us or using the unsubscribe instructions in any message you receive.',
+      body: 'You may opt out of SMS communications at any time by replying STOP to an SMS message. You may also request access to, correction of, or deletion of your personal information by contacting us.',
     },
     {
       heading: '7. Third-party links',
