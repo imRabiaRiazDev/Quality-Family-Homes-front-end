@@ -66,19 +66,13 @@ export default function Footer({ navigate }) {
             <h3>Legal</h3>
             <ul className="footer__legal-links">
               <li>
-                <button type="button" className="footer-link-btn" onClick={() => navigate('terms')}>
-                  Terms &amp; Conditions
-                </button>
+                <a href="#/terms">Terms &amp; Conditions</a>
               </li>
               <li>
-                <button type="button" className="footer-link-btn" onClick={() => navigate('privacy')}>
-                  Privacy Policy
-                </button>
+                <a href="#/privacy">Privacy Policy</a>
               </li>
               <li>
-                <button type="button" className="footer-link-btn" onClick={() => navigate('register')}>
-                  Register Now
-                </button>
+                <a href="#/register">Register Now</a>
               </li>
             </ul>
           </nav>

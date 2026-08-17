@@ -19,6 +19,8 @@ const TITLES = {
   privacy: 'Privacy Policy — Quality Family Homes',
 }
 
+const VIEWS = ['home', 'register', 'terms', 'privacy']
+
 export default function App() {
   const [view, setView] = useState('home')
   const [navOpen, setNavOpen] = useState(false)
@@ -27,6 +29,24 @@ export default function App() {
     setView(next)
     setNavOpen(false)
     window.scrollTo({ top: 0, behavior: 'auto' })
+    const hash = next === 'home' ? window.location.pathname + window.location.search : `#/${next}`
+    if (window.location.hash !== `#/${next}`) {
+      window.history.replaceState(null, '', hash)
+    }
+  }, [])
+
+  useEffect(() => {
+    const route = () => {
+      const raw = window.location.hash
+      if (!raw.startsWith('#/')) return
+      const name = raw.slice(2)
+      setView(VIEWS.includes(name) ? name : 'home')
+      setNavOpen(false)
+      if (name !== 'home') window.scrollTo({ top: 0, behavior: 'auto' })
+    }
+    window.addEventListener('hashchange', route)
+    route()
+    return () => window.removeEventListener('hashchange', route)
   }, [])
 
   useEffect(() => {

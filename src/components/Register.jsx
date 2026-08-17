@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ArrowLeft, Home, MessageSquareText, CheckCircle2 } from 'lucide-react'
 import { BrandMark } from './Header'
 
-const initialForm = { name: '', email: '', phone: '', message: '' }
+const initialForm = { name: '', email: '', phone: '', message: '', smsConsent: false }
 
 export default function Register({ navigate }) {
   const [form, setForm] = useState(initialForm)
@@ -10,7 +10,8 @@ export default function Register({ navigate }) {
   const [submitted, setSubmitted] = useState(false)
 
   function handleChange(e) {
-    const { name, value } = e.target
+    const { name } = e.target
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
     setForm((prev) => ({ ...prev, [name]: value }))
     setErrors((prev) => ({ ...prev, [name]: undefined }))
   }
@@ -124,6 +125,35 @@ export default function Register({ navigate }) {
                   {errors.phone && <span className="field__error">{errors.phone}</span>}
                 </div>
 
+                <div className="sms-note">
+                  <MessageSquareText size={18} />
+                  <span>
+                    By providing your phone number, you expressly consent to receive SMS messages from Quality
+                    Family Homes regarding your inquiry, including responses, follow-ups, and tour-related
+                    communications. Message frequency varies. Message and data rates may apply. Reply{' '}
+                    <strong>STOP</strong> to opt out or <strong>HELP</strong> for help. Consent is not a
+                    condition of purchasing or using our services.
+                  </span>
+                </div>
+
+                <div className="field">
+                  <label className="consent-check">
+                    <input
+                      id="smsConsent"
+                      name="smsConsent"
+                      type="checkbox"
+                      checked={form.smsConsent}
+                      onChange={handleChange}
+                    />
+                    <span>
+                      I agree to receive text messages from Quality Family Homes regarding my inquiry, including
+                      responses, follow-ups, and tour-related communications. Message frequency varies. Message
+                      and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong>{' '}
+                      for help. Consent is not a condition of purchasing or using our services.
+                    </span>
+                  </label>
+                </div>
+
                 <div className="field">
                   <label htmlFor="message">Message</label>
                   <textarea
@@ -133,15 +163,6 @@ export default function Register({ navigate }) {
                     value={form.message}
                     onChange={handleChange}
                   />
-                </div>
-
-                <div className="sms-note">
-                  <MessageSquareText size={18} />
-                  <span>
-                    By providing your phone number, you agree to receive text messages from Quality Family Homes
-                    about your inquiry. Message frequency varies; message &amp; data rates may apply. Reply{' '}
-                    <strong>STOP</strong> to stop receiving messages at any time.
-                  </span>
                 </div>
 
                 <div className="form-actions">

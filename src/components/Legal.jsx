@@ -62,11 +62,11 @@ const PRIVACY = {
     },
     {
       heading: '3. Text messaging',
-      body: 'If you provide your phone number, you may receive text messages from Quality Family Homes about your inquiry. Message frequency varies, and message & data rates may apply. You can opt out at any time by replying STOP to any message you receive.',
+      body: 'If you provide your phone number, you may receive text messages from Quality Family Homes about your inquiry, including responses, follow-ups, and tour-related communications. Message frequency varies, and message and data rates may apply. You can opt out at any time by replying STOP to any message you receive. For assistance, reply HELP.',
     },
     {
       heading: '4. Sharing of information',
-      body: 'We do not sell your personal information. We may share information with service providers who help us operate our website and manage our rentals (such as listing platforms), and we may disclose information where required by law.',
+      body: 'We do not sell your personal information. Mobile information and SMS consent information will not be shared or sold to third parties or affiliates for marketing or promotional purposes. We may share information with service providers who help us operate our website and manage our rentals (such as listing platforms), and we may disclose information where required by law.',
     },
     {
       heading: '5. Data security',
